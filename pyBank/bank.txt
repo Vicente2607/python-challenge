@@ -1,0 +1,7 @@
+Analisis Financiero
+--------------------------------------------
+Total de meses  : 86
+Monto Total     : 38382578
+Promedio de Cambios : -12816.0
+El Mayor Profit : Feb-2012  1170593
+El Menor Profit : Sep-2013  -1196225

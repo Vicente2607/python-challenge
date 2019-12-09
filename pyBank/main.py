@@ -46,9 +46,22 @@ for i in montos:
         fechamenor=fechas[j]
     j=j+1
 
-
-
 promedio=(mayor+menor)/2
+
+# save the output file path
+output_file = os.path.join("bank.txt")
+
+# open the output file, create a header row, and then write the zipped object to the csv
+with open(output_file, "w", newline="") as datafile:
+    writer = csv.writer(datafile)
+    writer.writerow(["Analisis Financiero"])
+    writer.writerow(["--------------------------------------------"])
+    writer.writerow(["Total de meses  : "+str(meses)])
+    writer.writerow(["Monto Total     : "+str(total)])
+    writer.writerow(["Promedio de Cambios : "+str(promedio)])
+    writer.writerow(["El Mayor Profit : " +fechamayor+"  "+str(mayor)])
+    writer.writerow(["El Menor Profit : "+fechamenor+"  "+str(menor)])
+
 
 print("Analisis Financiero")
 print("------------------------------------------------------------")
