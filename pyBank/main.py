@@ -14,6 +14,8 @@ mayor=0
 menor=0
 montos=[]
 fechas=[]
+fechamayor="Ene-2000"
+fechamenor="Ene-1999"
 
 import os
 import csv
@@ -25,18 +27,35 @@ with open(csvpath, newline='') as csvfile:
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
 
-
-    mayor=int(row[1])
-    menor=mayor
     # Read each row of data after the header
     for row in csvreader:
         fechas.append(row[0])
-        montos.append(row[1])
-        print(row)
+        montos.append(int(row[1]))
         meses=meses+1
         total=total+int(row[1])
 
-print(str(meses))
-print(str(total))
-promedio=total/meses
-print(str(promedio))
+mayor=max(montos)
+menor=min(montos)
+j=0
+
+
+for i in montos:
+    if mayor==i :
+        fechamayor=fechas[j]
+    if menor==i :
+        fechamenor=fechas[j]
+    j=j+1
+
+
+
+promedio=(mayor+menor)/2
+
+print("Analisis Financiero")
+print("------------------------------------------------------------")
+print("Total de meses  : "+str(meses))
+print("Monto Total     : "+str(total))
+print("Promedio        : "+str(promedio))
+print("El Mayor Profit : " +fechamayor+"  "+str(mayor))
+print("El Menor Profit : "+fechamenor+"  "+str(menor))
+
+
